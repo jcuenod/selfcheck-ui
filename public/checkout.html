@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<div class="h-screen w-screen flex flex-col">
+
+		<!-- Header Bar -->
+		<div class="flex-shrink bg-blue-800 flex content-between items-center p-2 shadow-md" style="z-index: 1;">
+
+			<!-- Library Name -->
+			<div class="flex-auto text-gray-200 m-2">
+				<div class="font-thin text-2xl">
+					Buswell Library
+				</div>
+				<div class="font-extrabold text-sm uppercase">
+					Wheaton College
+				</div>
+			</div>
+
+			<!-- User Details -->
+			<div class="flex-auto flex flex-row justify-end items-center">
+				<svg class="w-10 h-10 m-2 text-gray-200" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+				</svg>
+				<div class="text-2xl mr-4 text-gray-300">
+					James Cuénod
+				</div>
+
+				<!-- State Pills -->
+				<div class="flex items-center rounded-full bg-blue-400 m-2 py-1 pl-3 pr-1 text-gray-200">
+					<div class="font-extrabold text-xs uppercase">Loans</div>
+					<div class="rounded-full w-8 h-8 bg-blue-300 flex justify-center items-center text-gray-200 ml-2">
+						56
+					</div>
+				</div>				
+				<div class="flex items-center rounded-full bg-blue-400 m-2 py-1 pl-3 pr-1 text-gray-200">
+					<div class="font-extrabold text-xs uppercase">Requests</div>
+					<div class="rounded-full w-8 h-8 bg-blue-300 flex justify-center items-center text-gray-200 ml-2">
+						2
+					</div>
+				</div>				
+				<div class="flex items-center rounded-full bg-blue-400 m-2 py-1 pl-3 pr-1 text-gray-200">
+					<div class="font-extrabold text-xs uppercase">Fines & Fees</div>
+					<div class="rounded-full w-8 h-8 bg-blue-300 flex justify-center items-center text-gray-200 ml-2">
+						$12
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Main Content -->
+		<div class="flex-auto bg-gray-300 flex flex-col justify-center items-center">
+
+			<!-- Barcode Scanner -->
+			<div class="flex-shrink w-3/4 flex flex-row bg-gray-100 rounded-lg border-blue-400 border-4 mt-20">
+				<div class="flex-none flex items-center m-5">
+					<svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+					</svg>
+				</div>
+				<input class="text-2xl bg-transparent outline-none w-full" placeholder=" Scan your book" />
+				<a href="#" class="flex-none flex items-center m-2 p-2 rounded cursor-pointer bg-blue-400 text-gray-200 hover:bg-blue-300 hover:text-white hover:shadow-md focus:bg-blue-600 focus:shadow-inner">
+					<svg class="w-10 h-10" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+				</a>
+			</div>
+
+			<!-- Alert Dialog -->
+			<div class="flex-shrink m-4 p-2 bg-red-300 rounded-lg border-2 border-red-800 flex">
+				<svg class="w-6 h-6 text-red-800" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+					<path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
+				</svg>
+				<div class="mx-2 text-red-900">
+					The barcode you scanned does not exist. Please scan a book that is actually real.
+				</div>
+			</div>
+
+			<!-- Book Table -->
+			<div class="flex-auto w-3/4 px-8">
+				<table class="table-auto w-full">
+					<thead class="uppercase text-sm font-bold">
+						<tr>
+							<td class="px-2 text-blue-800">Due Date</td>
+							<td class="px-2 text-blue-800">Book</td>
+						</tr>
+					</thead>
+					<tbody class="text-xl">
+						<tr class="border-b border-gray-400">
+							<td class="p-2">22/01/2021</td>
+							<td class="p-2">The Gospel According to Moses / Daniel Block</td>
+						</tr>
+						<tr class="border-b border-gray-400">
+							<td class="p-2">22/01/2018</td>
+							<td class="p-2">Gods in Dwellings / Michael Hundley</td>
+						</tr>
+						<tr class="border-b border-gray-400">
+							<td class="p-2">14/03/2021</td>
+							<td class="p-2">The Most Important Book / Ever Written</td>
+						</tr>
+						<tr class="border-b border-gray-400">
+							<td class="p-2">25/12/0000</td>
+							<td class="p-2">Holy Bible / Jesus</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
